@@ -17,6 +17,8 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using Tesonet.Windows_party.Services;
+using Tesonet.Windows_party.Services.Implementations;
+using Tesonet.Windows_party.Services.Interfaces;
 
 namespace Tesonet.Windows_party.ViewModel
 {
@@ -35,6 +37,7 @@ namespace Tesonet.Windows_party.ViewModel
             SimpleIoc.Default.Register<LoginViewModel>();
             SimpleIoc.Default.Register<ServerListViewModel>();
             SimpleIoc.Default.Register<IApiService, ApiService>();
+            SimpleIoc.Default.Register<ILoggerService, NLoggerLoggerService>();
             SimpleIoc.Default.Register<INavigationService, NavigationService>();
         }
 

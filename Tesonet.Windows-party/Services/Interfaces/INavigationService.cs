@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace Tesonet.Windows_party.Services
+﻿namespace Tesonet.Windows_party.Services.Interfaces
 {
     public interface INavigationService
     {

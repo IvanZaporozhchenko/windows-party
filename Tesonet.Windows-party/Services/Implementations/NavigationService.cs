@@ -1,6 +1,7 @@
+using Tesonet.Windows_party.Services.Interfaces;
 using Tesonet.Windows_party.Views;
 
-namespace Tesonet.Windows_party.Services
+namespace Tesonet.Windows_party.Services.Implementations
 {
     public class NavigationService : INavigationService
     {

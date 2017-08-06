@@ -1,20 +1,24 @@
 using System.Threading.Tasks;
 using FluentAssertions;
+using NSubstitute;
 using NUnit.Framework;
 using Tesonet.Windows_party.Models;
 using Tesonet.Windows_party.Services;
+using Tesonet.Windows_party.Services.Implementations;
+using Tesonet.Windows_party.Services.Interfaces;
 
 namespace Tesonet.Windows_party.Tests.Services
 {
     [TestFixture]
     public class ApiServiceIntegrationTests
     {
+        private readonly ILoggerService _loggerService = Substitute.For<ILoggerService>();
         private IApiService _apiService;
 
         [SetUp]
         public void SetUp()
         {
-            _apiService = new ApiService();
+            _apiService = new ApiService(_loggerService);
         }
 
         [Test]

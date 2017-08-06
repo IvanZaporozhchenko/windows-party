@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Tesonet.Windows_party.Models;
 
-namespace Tesonet.Windows_party.Services
+namespace Tesonet.Windows_party.Services.Interfaces
 {
     public interface IApiService
     {

@@ -6,6 +6,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Tesonet.Windows_party.Models;
 using Tesonet.Windows_party.Services;
+using Tesonet.Windows_party.Services.Interfaces;
 
 namespace Tesonet.Windows_party.ViewModel
 {
