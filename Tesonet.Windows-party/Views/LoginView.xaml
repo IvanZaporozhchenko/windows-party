@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:wpfControls="clr-namespace:Tesonet.Windows_party.WpfControls"
         mc:Ignorable="d"
-        Height="646" Width="1208"
+        Height="780" Width="1460"
         DataContext="{Binding LoginViewModel, Source={StaticResource ViewModelLocator}}">
     <Window.Background>
         <ImageBrush ImageSource="../Resources/login-background.png"/>

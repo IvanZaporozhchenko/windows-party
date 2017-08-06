@@ -10,7 +10,7 @@
         <TextBox Template="{StaticResource TextBoxRoundControlTemplate}" Name="textBox" FontSize="16" VerticalContentAlignment="Center" 
                  Padding="31,0,0,0" Text="{Binding Path=Text, ElementName=userNameTextBox}"/>
         <Image Source="../Resources/username-icon.png" HorizontalAlignment="Left"
-                       Width="14" Height="16" Margin="7,0,0,0"
+                       Width="14" Height="18" Margin="7,0,0,0"
                        VerticalAlignment="Center"/>
         <TextBlock Text="Username" FontSize="16" Foreground="{StaticResource WatermarkForeground}"
                            IsHitTestVisible="False"
