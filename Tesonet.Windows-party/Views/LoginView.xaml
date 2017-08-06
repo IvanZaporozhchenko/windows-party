@@ -1,0 +1,18 @@
+﻿<Window x:Class="Tesonet.Windows_party.Views.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tesonet.Windows_party"
+        xmlns:viewModel="clr-namespace:Tesonet.Windows_party.ViewModel"
+        mc:Ignorable="d"
+        Height="350" Width="525"
+        DataContext="{Binding LoginViewModel, Source={StaticResource ViewModelLocator}}">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox Text="{Binding UserName}"/>
+            <PasswordBox Name="passwordBox"/>
+            <Button Content="Log In" Command="{Binding LoginButtonClickCommand}" CommandParameter="{Binding ElementName=passwordBox}"/>
+        </StackPanel>
+    </Grid>
+</Window>
