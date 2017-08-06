@@ -10,17 +10,19 @@ namespace Tesonet.Windows_party.ViewModel
     public class LoginViewModel : ViewModelBase
     {
         private readonly IApiService _apiService;
+        private readonly INavigationService _navigationService;
 
-        public LoginViewModel(IApiService apiService)
+        public LoginViewModel(IApiService apiService, INavigationService navigationService)
         {
             _apiService = apiService;
+            _navigationService = navigationService;
         }
-        
+
         public string UserName { get; set; }        
 
-        public ICommand LoginButtonClickCommand => new RelayCommand<PasswordBox>(LoginButtonClick);
+        public ICommand LoginClickCommand => new RelayCommand<PasswordBox>(LoginClick);
 
-        private async void LoginButtonClick(PasswordBox passwordBox)
+        private async void LoginClick(PasswordBox passwordBox)
         {
             var result = await _apiService.Login(new LoginModel
             {
@@ -30,7 +32,7 @@ namespace Tesonet.Windows_party.ViewModel
 
             if (result)
             {
-               
+                _navigationService.ShowServerListView();
             }
         }
     }

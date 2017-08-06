@@ -12,7 +12,7 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBox Text="{Binding UserName}"/>
             <PasswordBox Name="passwordBox"/>
-            <Button Content="Log In" Command="{Binding LoginButtonClickCommand}" CommandParameter="{Binding ElementName=passwordBox}"/>
+            <Button Content="Log In" Command="{Binding LoginClickCommand}" CommandParameter="{Binding ElementName=passwordBox}"/>
         </StackPanel>
     </Grid>
 </Window>

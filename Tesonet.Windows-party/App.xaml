@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Tesonet.Windows_party"
              xmlns:viewModel="clr-namespace:Tesonet.Windows_party.ViewModel"
-             StartupUri="Views/LoginView.xaml">
+             Startup="AppOnStartup">
     <Application.Resources>
         <viewModel:ViewModelLocator x:Key="ViewModelLocator" />
     </Application.Resources>

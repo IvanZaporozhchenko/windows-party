@@ -1,7 +1,9 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using Tesonet.Windows_party.Models;
 using Tesonet.Windows_party.Services;
 
@@ -10,11 +12,13 @@ namespace Tesonet.Windows_party.ViewModel
     public class ServerListViewModel : ViewModelBase
     {
         private readonly IApiService _apiService;
+        private readonly INavigationService _navigationService;
         private ObservableCollection<ServerModel> _serverModels;
 
-        public ServerListViewModel(IApiService apiService)
+        public ServerListViewModel(IApiService apiService, INavigationService navigationService)
         {
             _apiService = apiService;
+            _navigationService = navigationService;
             ServerModels = new ObservableCollection<ServerModel>();
             InitServerModels();
         }
@@ -27,6 +31,14 @@ namespace Tesonet.Windows_party.ViewModel
                 _serverModels = value;
                 RaisePropertyChanged(() => ServerModels);
             }
+        }
+
+        public ICommand LogoutClickCommand => new RelayCommand(LogoutClick);
+
+        private void LogoutClick()
+        {
+            _apiService.Logout();
+            _navigationService.ShowLoginView();
         }
 
         private async void InitServerModels()

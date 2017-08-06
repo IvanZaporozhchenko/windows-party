@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace Tesonet.Windows_party.Views
 {
@@ -9,7 +10,7 @@ namespace Tesonet.Windows_party.Views
     {
         public LoginView()
         {
-            InitializeComponent();
-        }
+            InitializeComponent();            
+        }        
     }
 }

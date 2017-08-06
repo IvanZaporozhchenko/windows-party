@@ -84,6 +84,8 @@
     <Compile Include="Models\TokenModel.cs" />
     <Compile Include="Services\ApiService.cs" />
     <Compile Include="Services\IApiService.cs" />
+    <Compile Include="Services\INavigationService.cs" />
+    <Compile Include="Services\NavigationService.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\ServerListViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />

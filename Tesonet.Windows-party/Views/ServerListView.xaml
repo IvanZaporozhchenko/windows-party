@@ -8,12 +8,21 @@
         Height="300" Width="300"
         DataContext="{Binding ServerListViewModel, Source={StaticResource ViewModelLocator}}">
     <Grid>
-        <ListBox ItemsSource="{Binding ServerModels}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Grid.Column="1" Content="Logout" HorizontalAlignment="Right" Command="{Binding LogoutClickCommand}"/>
+        <ListBox ItemsSource="{Binding ServerModels}" Grid.Column="0" Grid.Row="1">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="{Binding Name}" HorizontalAlignment="Left"/>
-                        <Label Content="{Binding Distance}" HorizontalAlignment="Right"/>
+                        <TextBlock Text="{Binding Name}" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{Binding Distance}" HorizontalAlignment="Right"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

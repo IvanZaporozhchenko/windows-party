@@ -12,6 +12,7 @@
   See http://www.galasoft.ch/mvvm
 */
 
+using System;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
@@ -34,11 +35,14 @@ namespace Tesonet.Windows_party.ViewModel
             SimpleIoc.Default.Register<LoginViewModel>();
             SimpleIoc.Default.Register<ServerListViewModel>();
             SimpleIoc.Default.Register<IApiService, ApiService>();
+            SimpleIoc.Default.Register<INavigationService, NavigationService>();
         }
 
         public LoginViewModel LoginViewModel => ServiceLocator.Current.GetInstance<LoginViewModel>();
 
-        public ServerListViewModel ServerListViewModel => ServiceLocator.Current.GetInstance<ServerListViewModel>();
+        public ServerListViewModel ServerListViewModel => ServiceLocator.Current.GetInstance<ServerListViewModel>(Guid.NewGuid().ToString());
+
+        public INavigationService NavigationService => ServiceLocator.Current.GetInstance<INavigationService>();
 
         public static void Cleanup()
         {
