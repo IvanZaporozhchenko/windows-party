@@ -22,11 +22,22 @@
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Image Source="../Resources/logo.png" Width="246" Height="64"/>
-            <wpfControls:UsernameTextBox Margin="0,71,0,0" Width="372" Height="56" Text="{Binding UserName  }"/>
+            <TextBlock Text="Invalid Username/Password" Foreground="Red"
+                       Margin="0,50,0,0" Height="15" HorizontalAlignment="Center"
+                       Visibility="{Binding CredentialsErrorVisible, Converter={StaticResource BooleanToVisibilityHiddenConverter}}"/>
+            <wpfControls:UsernameTextBox Margin="0,6,0,0" Width="372" Height="56" Text="{Binding UserName  }"/>
             <wpfControls:PasswordWatermarkTextBox x:Name="PasswordWatermarkTextBox" Margin="0,20,0,0" Width="372" Height="56"/>
-            <Button Content="Log In" Width="372" Height="56" Margin="0,20,0,0"
+            <Button Width="372" Height="56" Margin="0,20,0,0"
                     Command="{Binding LoginClickCommand}" CommandParameter="{Binding ElementName=PasswordWatermarkTextBox, Path=PasswordBox}"
-                    Style="{StaticResource LoginButtonStyle}" />
+                    Style="{StaticResource LoginButtonStyle}" >
+                <Button.Content>
+                    <Grid Width="80" Margin="20,0,0,0">
+                        <TextBlock Text="Log In"/>
+                        <wpfControls:Spinner Margin="60,0,0,0" Width="20" Height="20" HorizontalAlignment="Right"
+                                             Visibility="{Binding IsSpinnerVisible, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

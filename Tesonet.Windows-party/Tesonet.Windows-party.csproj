@@ -83,13 +83,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\BooleanToVisibilityHiddenConverter.cs" />
     <Compile Include="Infrastructure\StringExtensions.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ServerModel.cs" />
     <Compile Include="Models\TokenModel.cs" />
     <Compile Include="Services\Implementations\ApiService.cs" />
     <Compile Include="Services\Implementations\NavigationService.cs" />
-    <Compile Include="Services\Implementations\NLoggerLoggerService.cs" />
+    <Compile Include="Services\Implementations\FileLoggerService.cs" />
     <Compile Include="Services\Interfaces\IApiService.cs" />
     <Compile Include="Services\Interfaces\ILoggerService.cs" />
     <Compile Include="Services\Interfaces\INavigationService.cs" />
@@ -109,6 +110,9 @@
     <Compile Include="WpfControls\PasswordWatermarkTextBox.xaml.cs">
       <DependentUpon>PasswordWatermarkTextBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WpfControls\Spinner.xaml.cs">
+      <DependentUpon>Spinner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WpfControls\UsernameTextBox.xaml.cs">
       <DependentUpon>UsernameTextBox.xaml</DependentUpon>
     </Compile>
@@ -121,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WpfControls\PasswordWatermarkTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WpfControls\Spinner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,9 +181,7 @@
     <Resource Include="Resources\password-icon.png" />
     <Resource Include="Resources\username-icon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Converters\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\serverlist-background.png" />
   </ItemGroup>

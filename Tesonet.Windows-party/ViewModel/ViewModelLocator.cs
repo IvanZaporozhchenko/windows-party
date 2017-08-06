@@ -37,11 +37,11 @@ namespace Tesonet.Windows_party.ViewModel
             SimpleIoc.Default.Register<LoginViewModel>();
             SimpleIoc.Default.Register<ServerListViewModel>();
             SimpleIoc.Default.Register<IApiService, ApiService>();
-            SimpleIoc.Default.Register<ILoggerService, NLoggerLoggerService>();
+            SimpleIoc.Default.Register<ILoggerService, FileLoggerService>();
             SimpleIoc.Default.Register<INavigationService, NavigationService>();
         }
 
-        public LoginViewModel LoginViewModel => ServiceLocator.Current.GetInstance<LoginViewModel>();
+        public LoginViewModel LoginViewModel => ServiceLocator.Current.GetInstance<LoginViewModel>(Guid.NewGuid().ToString());
 
         public ServerListViewModel ServerListViewModel => ServiceLocator.Current.GetInstance<ServerListViewModel>(Guid.NewGuid().ToString());
 

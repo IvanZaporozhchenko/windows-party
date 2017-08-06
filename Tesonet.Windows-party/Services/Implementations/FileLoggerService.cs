@@ -4,11 +4,11 @@ using Tesonet.Windows_party.Services.Interfaces;
 
 namespace Tesonet.Windows_party.Services.Implementations
 {
-    public class NLoggerLoggerService : ILoggerService
+    public class FileLoggerService : ILoggerService
     {
         private readonly ILogger _logger;
 
-        public NLoggerLoggerService()
+        public FileLoggerService()
         {
             _logger = LogManager.GetCurrentClassLogger();            
         }
