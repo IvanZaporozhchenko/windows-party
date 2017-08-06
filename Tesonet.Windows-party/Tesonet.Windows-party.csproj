@@ -83,6 +83,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Infrastructure\StringExtensions.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ServerModel.cs" />
     <Compile Include="Models\TokenModel.cs" />
@@ -105,11 +106,25 @@
     <Compile Include="Views\ServerListView.xaml.cs">
       <DependentUpon>ServerListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WpfControls\PasswordWatermarkTextBox.xaml.cs">
+      <DependentUpon>PasswordWatermarkTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfControls\UsernameTextBox.xaml.cs">
+      <DependentUpon>UsernameTextBox.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\LoginView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ServerListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WpfControls\PasswordWatermarkTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WpfControls\UsernameTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,6 +162,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\login-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\password-icon.png" />
+    <Resource Include="Resources\username-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converters\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

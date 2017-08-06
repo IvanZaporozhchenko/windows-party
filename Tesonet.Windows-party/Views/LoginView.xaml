@@ -3,16 +3,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Tesonet.Windows_party"
-        xmlns:viewModel="clr-namespace:Tesonet.Windows_party.ViewModel"
+        xmlns:wpfControls="clr-namespace:Tesonet.Windows_party.WpfControls"
         mc:Ignorable="d"
-        Height="350" Width="525"
+        Height="646" Width="1208"
         DataContext="{Binding LoginViewModel, Source={StaticResource ViewModelLocator}}">
+    <Window.Background>
+        <ImageBrush ImageSource="../Resources/login-background.png"/>
+    </Window.Background>
+    <Window.Resources>
+        <Style x:Key="LoginButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource LoginButtonBackground}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template" Value="{StaticResource ButtonRoundControlTemplate}" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+    </Window.Resources>
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBox Text="{Binding UserName}"/>
-            <PasswordBox Name="passwordBox"/>
-            <Button Content="Log In" Command="{Binding LoginClickCommand}" CommandParameter="{Binding ElementName=passwordBox}"/>
+            <Image Source="../Resources/logo.png" Width="246" Height="64"/>
+            <wpfControls:UsernameTextBox Margin="0,71,0,0" Width="372" Height="56" Text="{Binding UserName  }"/>
+            <wpfControls:PasswordWatermarkTextBox x:Name="PasswordWatermarkTextBox" Margin="0,20,0,0" Width="372" Height="56"/>
+            <Button Content="Log In" Width="372" Height="56" Margin="0,20,0,0"
+                    Command="{Binding LoginClickCommand}" CommandParameter="{Binding ElementName=PasswordWatermarkTextBox, Path=PasswordBox}"
+                    Style="{StaticResource LoginButtonStyle}" />
         </StackPanel>
     </Grid>
 </Window>

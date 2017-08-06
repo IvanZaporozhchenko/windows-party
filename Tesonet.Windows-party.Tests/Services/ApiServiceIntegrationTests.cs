@@ -3,7 +3,6 @@ using FluentAssertions;
 using NSubstitute;
 using NUnit.Framework;
 using Tesonet.Windows_party.Models;
-using Tesonet.Windows_party.Services;
 using Tesonet.Windows_party.Services.Implementations;
 using Tesonet.Windows_party.Services.Interfaces;
 

@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using GalaSoft.MvvmLight.Messaging;
 
 namespace Tesonet.Windows_party.Views
 {

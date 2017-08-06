@@ -3,7 +3,6 @@ using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using Tesonet.Windows_party.Models;
-using Tesonet.Windows_party.Services;
 using Tesonet.Windows_party.Services.Interfaces;
 
 namespace Tesonet.Windows_party.ViewModel
